@@ -110,7 +110,7 @@
     } else if (sector.filter) {
       const button=Array.from(document.querySelectorAll('[data-filter]')).find(item=>item.dataset.filter===sector.filter);
       button?.click();
-      document.getElementById('client-directory').open=true;
+      const cd=document.getElementById('client-directory');if(cd)cd.open=true;
     }
   });
   syncScopeLinks();

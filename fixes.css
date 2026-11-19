@@ -271,3 +271,8 @@ html,body{overflow-x:clip}
 .offer-inner h2 em{display:inline-block;line-height:1.25;padding:0 .2em .08em}
 .calc-result strong{white-space:nowrap;font-size:clamp(38px,4.4vw,62px);unicode-bidi:isolate}
 .calc-result>span b{unicode-bidi:isolate;display:inline-block}
+
+/* شعار الهيدر: ABUALHEEL أكبر من ali */
+.wordmark{font-size:17px!important;letter-spacing:-.5px!important;line-height:1!important;font-weight:700!important}
+.wordmark small{font:900 25px/1 Arial,sans-serif!important;letter-spacing:-.8px!important;margin:3px 0 0!important;color:#0f0f0f}
+@media(max-width:700px){.wordmark{font-size:14px!important}.wordmark small{font-size:20px!important}}

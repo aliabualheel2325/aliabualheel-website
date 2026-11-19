@@ -7,7 +7,7 @@ const clients=[
  ['musa','مهندس موسى','media'],['medx','ميدكس بلس','beauty'],['hamza','حمزة الجنابي','media'],['bastia','بسطية','retail'],['ck','سي كي للعطور','beauty'],['baghdad_rotag','بغداد روتاج','beauty'],['mudun','مدن','retail'],['hyper_sultan','هايبر السلطان','retail']
 ];
 const grid=document.getElementById('client-grid');
-if(grid.children.length===0)clients.forEach(([asset,name,category])=>{const card=document.createElement('div');card.className='client';card.dataset.category=category;const img=document.createElement('img');img.src=`assets/${asset}.webp`;img.alt=`شعار ${name}`;img.width=130;img.height=78;img.loading='lazy';const label=document.createElement('span');label.textContent=name;card.append(img,label);grid.append(card);});
+if(grid&&grid.children.length===0)clients.forEach(([asset,name,category])=>{const card=document.createElement('div');card.className='client';card.dataset.category=category;const img=document.createElement('img');img.src=`assets/${asset}.webp`;img.alt=`شعار ${name}`;img.width=130;img.height=78;img.loading='lazy';const label=document.createElement('span');label.textContent=name;card.append(img,label);grid.append(card);});
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});let count=0;grid.querySelectorAll('.client').forEach(card=>{card.hidden=button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter;if(!card.hidden)count++;});document.getElementById('clients-status').textContent=`عرض ${count} جهة`;setOrbitFilter(button.dataset.filter);}));
 const menuButton=document.querySelector('.menu-toggle');const mobileNav=document.getElementById('mobile-nav');
 function closeMenu(){mobileNav.hidden=true;menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','فتح القائمة');}
@@ -89,6 +89,7 @@ dialog.addEventListener('close',()=>{content.querySelector('iframe')?.remove();d
 document.getElementById('year').textContent=String(new Date().getFullYear());
 const reducedMotion=({matches:false,addEventListener(){}});
 // A six-card orbit cycles through the verified clients and follows sector filters.
+if(document.getElementById('client-orbit')){
 const orbitStage=document.getElementById('client-orbit');
 const orbitCards=Array.from(orbitStage.querySelectorAll('.orbit-client'));
 const orbitPause=document.getElementById('orbit-pause');
@@ -123,6 +124,7 @@ if('IntersectionObserver' in window){const orbitObserver=new IntersectionObserve
 document.addEventListener('visibilitychange',syncOrbitMotion);
 reducedMotion.addEventListener?.('change',syncOrbitMotion);
 setOrbitFilter('all');
+}
 if(!reducedMotion.matches&&'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.07});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));reducedMotion.addEventListener?.('change',e=>{if(e.matches){document.documentElement.classList.remove('motion-ready');observer.disconnect();}});}
 
 // Load the reference clips only near the viewport; keep manual pause respected.
