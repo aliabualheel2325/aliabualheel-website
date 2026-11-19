@@ -3,7 +3,7 @@
 const bar=document.createElement('div');bar.className='scroll-bar';document.body.appendChild(bar);
 addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
 // reveal everything
-const sel='.section-heading,.section h2,.evidence-case,.service-panel,.cooperation-card,.faq-list details,.about-copy>*,.experience-row,.client-filters,.portfolio-book,.brief-flow,.contact-card,.video-tags,.phone-video,.hero-feature,.brand-marquee>p,.footer-message,.chapter-card,.wv-card,.wv-head,.res-big';
+const sel='.section-heading,.section h2,.evidence-case,.service-panel,.cooperation-card,.faq-list details,.about-copy>*,.experience-row,.client-filters,.portfolio-book,.brief-flow,.contact-card,.video-tags,.phone-video,.hero-feature,.brand-marquee>p,.footer-message,.chapter-card,.wv-card,.wv-head,.res-big,.calc-card,.offer-inner';
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('m-in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll(sel).forEach((el,i)=>{if(el.closest('.hero'))return;el.classList.add('m-up');const sib=[...el.parentElement.children].indexOf(el);el.style.setProperty('--d',(Math.min(sib,4)*0.08)+'s');io.observe(el)});
 document.querySelectorAll('.about-image,.contact-landscape,.service-panel img').forEach(el=>{el.classList.add('m-img');io.observe(el)});
