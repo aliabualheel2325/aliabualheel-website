@@ -276,3 +276,11 @@ html,body{overflow-x:clip}
 .wordmark{font-size:17px!important;letter-spacing:-.5px!important;line-height:1!important;font-weight:700!important}
 .wordmark small{font:900 25px/1 Arial,sans-serif!important;letter-spacing:-.8px!important;margin:3px 0 0!important;color:#0f0f0f}
 @media(max-width:700px){.wordmark{font-size:14px!important}.wordmark small{font-size:20px!important}}
+
+/* ===== هيرو التعريف ===== */
+.hero-intro{font-size:clamp(17px,1.7vw,21px);line-height:1.8;max-width:520px;margin:18px 0 22px;color:#2a2a2a}
+.hero-intro b{background:linear-gradient(transparent 60%,var(--lime) 60%);font-weight:700}
+.hero-intro span{display:inline-block;font-weight:700;color:#0f0f0f}
+.hero-case-photo{object-position:50% 18%}
+#hero-title em{white-space:nowrap}
+@media(max-width:700px){#hero-title{font-size:clamp(44px,13vw,60px)!important;line-height:1.2!important}}

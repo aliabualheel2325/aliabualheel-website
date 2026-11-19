@@ -22,6 +22,7 @@ document.querySelectorAll('.phone-video').forEach(fig=>{const v=fig.querySelecto
 const card=document.querySelector('.hero-case');if(!card)return;
 const img=card.querySelector('.hero-case-photo'),name=card.querySelector('.hero-case-label>span'),sub=card.querySelector('.hero-case-label small');
 const slides=[
+ {src:'assets/portrait-ali.webp',n:'ALI ABUALHEEL',s:'ميديا باير · موشن · ماركتنك',go:'#about'},
  {src:'assets/o3-project.webp',n:'O3 OZOON',s:'من الأعمال اللي اشتغلت عليها',o3:1},
  {src:'assets/nabuya-photo.webp',n:'نبوية تيم',s:'ميديا باير · مبيعات وإعلانات',go:'#about'},
  {src:'assets/waseet-card.webp',n:'الوسيط',s:'ميديا باير · حملات وصول',go:'#work'}
