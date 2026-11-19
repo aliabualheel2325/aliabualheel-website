@@ -161,7 +161,7 @@ em{color:#0f0f0f;font-style:normal;background:linear-gradient(transparent 62%,va
 .brand-group img{width:150px!important;height:92px!important;object-fit:contain!important;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;filter:none!important;opacity:1!important;box-shadow:0 10px 24px -18px #0006}
 .brand-window{padding:10px 0}
 /* صور الأقسام الزخرفية بالأبيض والأسود حتى تمشي ويا الهوية */
-.service-panel img{filter:grayscale(1) contrast(1.05)}
+
 /* أزرار موحدة */
 .button,.cooperation-cta,.contact-project-link,.brief-whatsapp,.sound-btn{border-radius:999px!important;font-family:Cairo,Arial,sans-serif}
 /* عناوين الأقسام */
@@ -217,3 +217,15 @@ html,body{overflow-x:clip}
 .mm-toggle.on{background:#0866ff}.mm-toggle.on:after{right:18px}
 .mm-foot{padding:12px 22px;font-size:12.5px;color:#65676b;background:#f7f8fa}
 @media(max-width:700px){.mm-top{padding:12px 14px}.mm-top strong{font-size:15px;white-space:nowrap}.mm-date{font-size:11px;padding:4px 8px;white-space:nowrap}.mm-tabs{padding:8px 10px 0;overflow-x:auto}.mm-tabs span{font-size:12px;padding:7px 10px;white-space:nowrap}.meta-mock table{min-width:560px}.meta-mock th,.meta-mock td{padding:10px}.mm-name a{font-size:13px}.meta-mock td b{font-size:14px}}
+
+
+/* ===== كروت الخدمات بألوان الهوية ===== */
+.service-panel:nth-child(odd){background:var(--lime)!important;border-color:var(--lime)!important}
+.service-panel:nth-child(even){background:#0f0f0f!important;border-color:#0f0f0f!important;color:#fffdf0}
+.service-panel:nth-child(even) h3,.service-panel:nth-child(even) p,.service-panel:nth-child(even) li,.service-panel:nth-child(even) .eyebrow,.service-panel:nth-child(even) small,.service-panel:nth-child(even) span{color:#fffdf0!important}
+.service-panel:nth-child(even) .eyebrow{color:var(--lime)!important}
+.service-panel:nth-child(odd) h3,.service-panel:nth-child(odd) p,.service-panel:nth-child(odd) .eyebrow{color:#0f0f0f!important}
+.service-panel:nth-child(odd) em{background:#0f0f0f!important;color:var(--lime)!important;padding:0 .15em}
+.service-panel:nth-child(even) em{color:var(--lime)!important;background:none!important}
+.service-panel:nth-child(odd)>img{filter:grayscale(1) contrast(1.15)!important;mix-blend-mode:multiply}
+.service-panel:nth-child(even)>img{filter:grayscale(1) contrast(1.05) brightness(.92)!important}
