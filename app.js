@@ -29,16 +29,16 @@ document.querySelectorAll('[data-project]').forEach(button=>button.addEventListe
 const projectTrack=document.querySelector('.work-grid');
 // These are client-supplied reels; their names and URLs are used without inferred performance claims.
 const videoWorks=[
+ {id:'DdERX0fgATg',name:'O3 Ozoon',logo:'o3',video:'o3'},
+ {id:'DUYV8gWDC-Q',name:'نبوية تيم',logo:'nabuya',video:'nabuya'},
+ {id:'DU3laxijAF0',name:'الوسيط',logo:'waseet',video:'waseet'},
  {id:'DbLaFABMW4x',name:'العسل',logo:'honey',video:'honey'},
  {id:'DUJVJcYkumF',name:'ماستر ستور',logo:'master',dark:1,video:'master'},
  {id:'DWtpMgpjJKI',name:'ثري ستور',logo:'3store',video:'three'},
  {id:'DObkGl7iIki',name:'أبو رافل',logo:'abu_rafel',video:'abu_rafel'},
- {id:'DU3laxijAF0',name:'الوسيط',logo:'waseet',video:'waseet'},
  {id:'DbOMbXAufL1',name:'مدن',logo:'mudun',video:'mudun'},
- {id:'DdERX0fgATg',name:'O3 Ozoon',logo:'o3',video:'o3'},
  {id:'Dam7MkBooYk',name:'أسامة الشابندر',logo:'shabander',video:'shabander'},
- {id:'DdPI6krMijN',name:'كراند سمارة',image:'grand_samara'},
- {id:'DUYV8gWDC-Q',name:'نبوية تيم',logo:'nabuya',video:'nabuya'}
+ {id:'DdPI6krMijN',name:'كراند سمارة',image:'grand_samara'}
 ];
 function openVideo(work,trigger){
  if(work.video){const m=document.getElementById('wv-modal'),p=document.getElementById('wv-player');p.src=`assets/work/${work.video}.mp4`;document.getElementById('wv-title').textContent=work.name;m.hidden=false;document.body.style.overflow='hidden';p.muted=false;p.play().catch(()=>{});return;}
@@ -66,7 +66,7 @@ videoWorks.forEach((work,index)=>{
  const caption=document.createElement('div');caption.className='project-caption';
  const identity=document.createElement('div');identity.append(addText('h3',work.name),addText('p','نموذج فيديو منشور'));caption.append(identity,addText('span','شاهد العمل'));
  card.append(visual,caption);card.addEventListener('click',()=>openVideo(work,card));projectTrack.append(card);
- const dot=document.createElement('button');dot.type='button';dot.dataset.slide=String(index+5);dot.setAttribute('aria-label',`عرض فيديو ${work.name}`);dot.setAttribute('aria-pressed','false');dotsContainer.append(dot);
+ const dot=document.createElement('button');dot.type='button';dot.dataset.slide=String(index);dot.setAttribute('aria-label',`عرض فيديو ${work.name}`);dot.setAttribute('aria-pressed','false');dotsContainer.append(dot);
 });
 const projectCards=Array.from(projectTrack.querySelectorAll('.project-card'));
 let slideIndex=0;

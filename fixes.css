@@ -161,7 +161,7 @@ em{color:#0f0f0f;font-style:normal;background:linear-gradient(transparent 62%,va
 .brand-group img{width:150px!important;height:92px!important;object-fit:contain!important;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;filter:none!important;opacity:1!important;box-shadow:0 10px 24px -18px #0006}
 .brand-window{padding:10px 0}
 /* صور الأقسام الزخرفية بالأبيض والأسود حتى تمشي ويا الهوية */
-.service-panel img,.contact-landscape img,.contact-landscape{filter:grayscale(1) contrast(1.05)}
+.service-panel img{filter:grayscale(1) contrast(1.05)}
 /* أزرار موحدة */
 .button,.cooperation-cta,.contact-project-link,.brief-whatsapp,.sound-btn{border-radius:999px!important;font-family:Cairo,Arial,sans-serif}
 /* عناوين الأقسام */
