@@ -3,12 +3,12 @@
 const bar=document.createElement('div');bar.className='scroll-bar';document.body.appendChild(bar);
 addEventListener('scroll',()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
 // reveal everything
-const sel='.section-heading,.section h2,.evidence-case,.service-panel,.cooperation-card,.faq-list details,.about-copy>*,.experience-row,.client-filters,.portfolio-book,.brief-flow,.contact-card,.video-tags,.phone-video,.hero-feature,.brand-marquee>p,.footer-message,.chapter-card,.wv-card,.wv-head';
+const sel='.section-heading,.section h2,.evidence-case,.service-panel,.cooperation-card,.faq-list details,.about-copy>*,.experience-row,.client-filters,.portfolio-book,.brief-flow,.contact-card,.video-tags,.phone-video,.hero-feature,.brand-marquee>p,.footer-message,.chapter-card,.wv-card,.wv-head,.res-big';
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('m-in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll(sel).forEach((el,i)=>{if(el.closest('.hero'))return;el.classList.add('m-up');const sib=[...el.parentElement.children].indexOf(el);el.style.setProperty('--d',(Math.min(sib,4)*0.08)+'s');io.observe(el)});
 document.querySelectorAll('.about-image,.contact-landscape,.service-panel img').forEach(el=>{el.classList.add('m-img');io.observe(el)});
 // count-up numbers
-const nums=document.querySelectorAll('.evidence-primary strong,.evidence-secondary strong,.about-experience strong');
+const nums=document.querySelectorAll('.res-num,.mm-num,.about-experience strong');
 const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,txt=el.textContent.trim(),m=txt.match(/[\d,.]+/);if(!m)return;const raw=m[0],dec=(raw.split('.')[1]||'').length,val=parseFloat(raw.replace(/,/g,''));const t0=performance.now(),dur=1600;const fmt=v=>v.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec});(function step(t){const p=Math.min((t-t0)/dur,1),k=1-Math.pow(1-p,3);el.textContent=txt.replace(raw,fmt(val*k));if(p<1)requestAnimationFrame(step);else el.textContent=txt})(t0)}),{threshold:.5});
 nums.forEach(n=>cio.observe(n));
 // videos: autoplay muted in view, sound button
