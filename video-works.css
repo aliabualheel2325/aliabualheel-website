@@ -1,0 +1,22 @@
+.project-card[data-depth="far"]{opacity:0;visibility:hidden;pointer-events:none;transform:translateX(calc(-50% - 110px)) translateY(48px) rotate(-24deg)}
+.project-video .video-work-visual{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 30% 23%,#2c2c2c 0,#0f0f0f 40%,#141414 100%);color:#fff;align-items:center;justify-content:center;gap:18px}
+.project-video .video-work-visual:before{content:"";position:absolute;inset:17px;border:1px solid #ffffff42;border-radius:12px;pointer-events:none}
+.project-video .video-work-visual:after{border-color:#ffffff18;box-shadow:0 0 0 55px #ffffff05,0 0 0 110px #ffffff03}
+.project-video .video-work-visual>.project-kind{position:absolute;top:29px;right:30px;color:#fff;font-weight:700}
+.project-video .video-work-visual>img{width:min(230px,65%);height:125px;object-fit:contain;filter:none;background:#fff;border-radius:14px;padding:17px;position:relative;z-index:1}
+.project-video .video-client-name{font-size:clamp(32px,4vw,52px);line-height:1.5;font-weight:900;text-align:center;max-width:85%;position:relative;z-index:1}
+.project-video .video-play-label{font-size:15px;color:#f2f2ea;position:relative;z-index:1}
+.project-video .video-play-mark{display:grid;place-items:center;width:76px;height:76px;border:1px solid #ffffffa0;border-radius:50%;background:#ffffff1e;color:white;font:29px Arial,sans-serif;padding-left:4px;position:relative;z-index:1;transition:transform .25s ease,background .25s ease}
+.project-video:hover .video-play-mark,.project-video:focus-visible .video-play-mark{transform:scale(1.08);background:#ffffff35}
+.project-video:nth-of-type(2n) .video-work-visual{background:radial-gradient(circle at 75% 15%,#555 0,#242424 45%,#151515 100%)}
+.project-video .project-caption p{font-size:12px}
+.carousel-dots{flex-wrap:wrap;max-width:350px;margin-inline:auto;row-gap:17px}
+.video-dialog-cover{background:#0f0f0f;color:#fff}
+.video-dialog-cover>img{background:#fff;padding:8px;border-radius:12px;object-fit:contain}
+.video-dialog-main{display:flex;flex-direction:column;align-items:center;gap:20px}
+.video-dialog-main>p{align-self:stretch}
+.work-reel-frame{width:min(380px,100%);height:min(650px,70svh);min-height:430px;border:0;border-radius:13px;background:#eee}
+.video-external{align-self:stretch;text-align:center}
+.video-noscript{max-width:1100px;margin:18px auto;padding:16px;line-height:2}.video-noscript a{text-decoration:underline}
+@media(max-width:760px){.project-video .video-work-visual>.project-kind{top:25px;right:25px}.project-video .video-play-mark{width:64px;height:64px}.carousel-dots{max-width:290px;gap:13px}.work-reel-frame{height:min(590px,66svh);min-height:360px}}
+
